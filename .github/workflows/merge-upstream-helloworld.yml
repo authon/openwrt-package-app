@@ -40,7 +40,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       with:
-        ref: master
+        ref: master /helloworld
         fetch-depth: 0
         lfs: true
 
@@ -53,5 +53,5 @@ jobs:
 
     - name: Push Commits
       env:
-        DOWNSTREAM_BRANCH: master -helloworld
+        DOWNSTREAM_BRANCH: master /helloworld
       run: git push origin $DOWNSTREAM_BRANCH
