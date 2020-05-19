@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: Update-helloworld
+name: Update-serverchan
 
 on:
 # 定时触发
@@ -50,9 +50,9 @@ jobs:
       run : |
         git config --global user.email "KFER.Mercer@gmail.com"
         git config --global user.name "KFERMercer"
-    - name: Load latest helloworld
+    - name: Load latest luci-app-serverchan
       run: |
-        git clone https://github.com/tty228/luci-app-serverchan.git --depth=1 ./tmp/helloworld
+        git clone https://github.com/tty228/luci-app-serverchan.git --depth=1 ./tmp/luci-app-serverchan
         cp -rf ./tmp/luci-app-serverchan ./luci-app-serverchan
     - name: Apply commit changes
       run: |
