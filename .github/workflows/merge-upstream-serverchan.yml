@@ -52,8 +52,8 @@ jobs:
         git config --global user.name "KFERMercer"
     - name: Load latest luci-app-serverchan
       run: |
-        git clone https://github.com/tty228/luci-app-serverchan.git --depth=1 ./tmp/luci-app-serverchan
-        cp -rf ./tmp/luci-app-serverchan ./
+        git clone https://github.com/tty228/luci-app-serverchan.git --depth=1 ./tmp/
+        cp -rf ./tmp/ ./
     - name: Apply commit changes
       run: |
         git add ./
