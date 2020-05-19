@@ -53,7 +53,7 @@ jobs:
     - name: Load latest luci-app-serverchan
       run: |
         git clone https://github.com/tty228/luci-app-serverchan.git --depth=1 ./tmp/luci-app-serverchan
-        cp -rf ./tmp/ ./luci-app-serverchan
+        cp -rf ./tmp/luci-app-serverchan ./luci-app-serverchan
     - name: Apply commit changes
       run: |
         git add ./luci-app-serverchan/
