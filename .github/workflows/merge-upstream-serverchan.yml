@@ -57,7 +57,7 @@ jobs:
     - name: Apply commit changes
       run: |
         git add ./luci-app-serverchan/
-        echo -e "[bot] luci-app-serverchan: update\n\nlatest commit: $(cat ./tmp/luci-app-serverchan/.git/refs/heads/master)" > ./tmp/message
+        echo -e "[bot] luci-app-serverchan: update\n\nlatest commit: $(cat ./tmp/.git/refs/heads/master)" > ./tmp/message
         git commit --file="./tmp/message" --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" || exit 0
     - name: Push Commits
       run: git push origin master
