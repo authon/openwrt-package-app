@@ -1,12 +1,13 @@
+
 #
 # This is free software, lisence use MIT.
 # 
-# Copyright (C) 2019 KFERMercer <KFER.Mercer@gmail.com>
+# Copyright (C) 2020 KFERMercer <KFER.Mercer@gmail.com>
 # 
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: Merge-upstream
+name: Update-helloworld
 
 on:
 # 定时触发
@@ -31,7 +32,8 @@ on:
 #    - 'x86_64.config'
 
 jobs:
-  merge:
+
+  prepare:
 
     runs-on: ubuntu-latest
 
@@ -40,7 +42,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
       with:
-        ref: helloworld
+        ref: master
         fetch-depth: 0
         lfs: true
 
@@ -48,10 +50,14 @@ jobs:
       run : |
         git config --global user.email "KFER.Mercer@gmail.com"
         git config --global user.name "KFERMercer"
-    - name: Load upstream commits
-      run: git pull https://github.com/fw876/helloworld.git --no-edit --strategy-option ours
-
+    - name: Load latest helloworld
+      run: |
+        git clone https://github.com/fw876/helloworld.git --depth=1 ./tmp/helloworld
+        cp -rf ./tmp/helloworld/luci-app-ssr-plus ./package/lean/
+    - name: Apply commit changes
+      run: |
+        git add ./package/lean/luci-app-ssr-plus/
+        echo -e "[bot] luci-app-ssr-plus: update\n\nlatest commit: $(cat ./tmp/helloworld/.git/refs/heads/master)" > ./tmp/message
+        git commit --file="./tmp/message" --author="github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>" || exit 0
     - name: Push Commits
-      env:
-        DOWNSTREAM_BRANCH: helloworld
-      run: git push origin $DOWNSTREAM_BRANCH
+      run: git push origin master
