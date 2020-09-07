@@ -47,7 +47,7 @@ jobs:
         $GITHUB_WORKSPACE/${{matrix.target}}.sh
     - name: Upload
       env: 
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         [ -e $GITHUB_WORKSPACE/LICENSE ] && cp $GITHUB_WORKSPACE/LICENSE $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README.md ] && cp $GITHUB_WORKSPACE/README.md $GITHUB_WORKSPACE/${{matrix.target}}
@@ -56,4 +56,4 @@ jobs:
         git config user.email "authon@vip.qq.com"
         git add .
         git commit -m "update$(TZ='Asia/Shanghai' date +@%Y%m%d)"
-        git push --quiet "https://$GITHUB_TOKEN@github.com/authon/openwrt-package-app.git" BASE:${{matrix.target}}
+        git push --quiet "https://$GITHUB_TOKEN@github.com/authon/openwrt-package-app.git" HEAD:${{matrix.target}}
