@@ -25,7 +25,7 @@
 * 1.请Settings>Developer settings>Personal access tokens设置 {个人访问令牌}<br>
 * 2.项目的 Setting>Secrets>{密钥名}，内容填写 {个人访问令牌}<br>
 * 3.在upload.yml文件中<br>
-  - name: Upload<br>
+   - name: Upload<br>
      env: <br>
       GITHUB_TOKEN: ${{ secrets.密钥名 }}<br>
  
