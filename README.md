@@ -21,9 +21,9 @@
   [liuran001](https://github.com/liuran001/openwrt-packages) | [kenzok8](https://github.com/kenzok8/openwrt-packages)
 
    如要fork，
-   1.请Settings>Developer settings>Personal access tokens设置 {个人访问令牌}
-   2.项目的 Setting>Secrets>{密钥名}，内容填写 {个人访问令牌}
-   3.在upload.yml文件中
+   -1.请Settings>Developer settings>Personal access tokens设置 {个人访问令牌}
+   -2.项目的 Setting>Secrets>{密钥名}，内容填写 {个人访问令牌}
+   -3.在upload.yml文件中
         - name: Upload
              env: 
                GITHUB_TOKEN: ${{ secrets.密钥名 }}
