@@ -18,8 +18,7 @@
 源码感谢[liuran001](https://github.com/liuran001/openwrt-packages)<br>
 
 -------------------------------------------------------------------------------
-本项目主要用于收藏备份OpenWRT插件，如需使用<br>
-[liuran001](https://github.com/liuran001/openwrt-packages) | [kenzok8](https://github.com/kenzok8/openwrt-packages)<br>
+本项目主要用于收藏备份OpenWRT插件，如需使用[liuran001](https://github.com/liuran001/openwrt-packages) | [kenzok8](https://github.com/kenzok8/openwrt-packages)<br>
 
 如要fork，<br>
 * 1.请Settings>Developer settings>Personal access tokens设置 {个人访问令牌}<br>
