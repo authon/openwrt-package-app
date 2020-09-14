@@ -7,13 +7,13 @@
 
 食用方式（18.06）：<br>
  先cd进package目录，然后执行
-'git clone https://github.com/liuran001/openwrt-packages'<br>
+`git clone https://github.com/liuran001/openwrt-packages`<br>
    
 或者添加下面代码到feeds.conf.default文件<br>
-'src-git liuran001_packages https://github.com/liuran001/openwrt-packages'<br>
+`src-git liuran001_packages https://github.com/liuran001/openwrt-packages`<br>
    
 先cd进package目录，然后执行<br>
-'svn co https://github.com/liuran001/openwrt-packages/branches/packages'<br>
+`svn co https://github.com/liuran001/openwrt-packages/branches/packages`<br>
  
 源码感谢[liuran001](https://github.com/liuran001/openwrt-packages)<br>
 
