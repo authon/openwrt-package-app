@@ -1,16 +1,26 @@
 name: Update packages
 
 on:
-  repository_dispatch:
-  release:
-    types: published
-  push:
-    branches:
-      - update_sh
+# 定时触发(每天早6点10分)
   schedule:
-    - cron: '30 21 * * *' 
+   - cron: 10 22 * * *
+
+# release触发
+#  release:
+#   types: [published]
+
+# 点赞触发
   watch:
-    types: started
+    types: [started]
+
+# 编辑触发
+#  push:
+#    branches: 
+#      - master
+
+# config触发
+#  paths:
+#    - 'x86_64.config'
 
 env:
   TZ: Asia/Shanghai
